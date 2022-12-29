@@ -15,21 +15,21 @@ int main()
     char owners_choice;
     string main_menu;
     cout << "Are you an Owner (1) or a Customer (2)?" << endl;
-	cin >> question;
+    cin >> question;
     cout << endl;
     //Arrays
     string Products [100] = {"0"};
     double Prices [100] = {0};
     int ID [100] = {0};
 
-	while (true) 
+    while (true) 
     {
-		if (question == 1) 
+	if (question == 1) 
         {
             //Main Menu
             cout << endl;
-			question = true;
-			cout << "Hello Owner!" << endl;
+	    question = true;
+	    cout << "Hello Owner!" << endl;
             cout << endl;
             cout << "What would you like to do: " << endl;
             cout << "a. Preview list of available products" << endl;
@@ -46,14 +46,14 @@ int main()
                 //Preview list of available products (Jana)
                 case('a'):
                 {
-                    cout << "Preview list of availabe products:" << endl;
-                    for(int l = 0; l < (sizeof(Products)/sizeof(Products[0])); l++)
-                    {
+                   cout << "Preview list of availabe products:" << endl;
+                   for(int l = 0; l < (sizeof(Products)/sizeof(Products[0])); l++)
+                   {
                      if(Prices[l] == 0 && ID[l] == 0) 
-                     {
+                      {
                          count3++;
                          continue;
-                     }
+                       }
                     }
 
                     if (count3 == 100)
@@ -98,18 +98,18 @@ int main()
                 case('b'):
                 {
                     cout << endl;
-				    cout << "Create a list of products:" << endl;
-				    cout << "How many products will be in the list?" << endl;
-				    cin >> products_num;
-				    for (int o = 0; o < products_num; o++)
+                    cout << "Create a list of products:" << endl;
+		    cout << "How many products will be in the list?" << endl;
+		    cin >> products_num;
+		    for (int o = 0; o < products_num; o++)
                     {
                     cout << "Please enter the product ID: ";
                     cin >> ID[o];
-					cout << "Please enter the product name: ";
-					cin >> Products[o];
-					cout << "please enter " << Products[o] << "'s price: ";
-					cin >> Prices[o];
-				    }
+		    cout << "Please enter the product name: ";
+		    cin >> Products[o];
+		    cout << "please enter " << Products[o] << "'s price: ";
+		    cin >> Prices[o];
+		    }
                     cout << "Data saved. Would you like to return to main menu?" << endl;
                     cin >> main_menu;
                     if(main_menu == "Yes" || main_menu == "yes")
@@ -120,18 +120,19 @@ int main()
                 }
 
                 //Edit list of products (Jana)
-			    case('c'):
-				{   int edit, additional_items, count = 1, k = 0;
+	        case('c'):
+		{   
+		    int edit, additional_items, count = 1, k = 0;
                     cout << setw(10) << left << "Edit list of products:" << endl;
                     cout << "Do you want to (1) add or (2) delete products?" << endl;
                     cin >> edit;
                     cout << endl;
                     if(edit == 1)
                     {
-                        cout << "How many items do you want to add? " << endl;
-                        cin >> additional_items;
-                        while (count <= additional_items)
-                        {
+                      cout << "How many items do you want to add? " << endl;
+                      cin >> additional_items;
+                      while (count <= additional_items)
+                       {
                          cout << "What is the ID of the product you wish to add: " << endl;
                          cin >>  ID[products_num + k];
                          cout << "What is the name of the product you wish to add: " << endl;
@@ -140,11 +141,11 @@ int main()
                          cin >> Prices[products_num + k] ;
                          count++ ;
                          ++k ;
-                        }
-                        cout << endl;
-                        cout << "Data saved. Would you like to exit to main menu?" << endl;
-                        cin >> main_menu;
-                        if(main_menu == "Yes" || main_menu == "yes")
+                       }
+                      cout << endl;
+                      cout << "Data saved. Would you like to exit to main menu?" << endl;
+                      cin >> main_menu;
+                      if(main_menu == "Yes" || main_menu == "yes")
                         {
                          continue; 
                         }
